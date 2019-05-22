@@ -28,3 +28,4 @@ tsconfig.json
 
 # Source Code, only the dist is shipped
 src/
+!build/
