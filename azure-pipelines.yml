@@ -19,7 +19,7 @@ jobs:
         displayName: 'Install Node.js'
       - script: yarn
         displayName: 'Install Dependencies'
-      - script: 'yarn asbuild'
+      - script: 'yarn build'
         displayName: 'Test Build'
   - job: Test
     pool:

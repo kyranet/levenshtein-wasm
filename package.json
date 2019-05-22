@@ -2,18 +2,28 @@
   "name": "levenshtein-wasm",
   "version": "0.0.1",
   "description": "Lightning-fast Wasm-compiled levenshtein library.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "kyranet <kyradiscord@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^12.0.2",
+    "@types/tape": "^4.2.33",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
     "assemblyscript": "AssemblyScript/assemblyscript",
-    "tape": "^4.10.1"
+    "eslint": "^5.16.0",
+    "eslint-config-marine": "^3.0.2",
+    "tape": "^4.10.1",
+    "typescript": "^3.4.5"
   },
   "scripts": {
+    "prepublishOnly": "yarn build",
     "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
     "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate -O3",
     "asbuild": "yarn asbuild:untouched && yarn asbuild:optimized",
-    "test": "yarn asbuild && node test/suite",
-    "test:lint": "echo 0"
+    "build": "yarn asbuild && tsc -p .",
+    "build:test": "tsc -p test",
+    "test": "yarn build && yarn build:test && yarn test:run",
+    "test:run": "node test/suite.test",
+    "test:lint": "eslint --ext ts src test assembly"
   }
 }

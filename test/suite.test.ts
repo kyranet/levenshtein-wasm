@@ -1,5 +1,5 @@
-const test = require('tape');
-const levenshtein = require('../index');
+import * as test from 'tape';
+import { levenshtein } from '../dist/index';
 
 test('Basic Test', t => {
 	t.plan(14);
