@@ -40,9 +40,9 @@ function preInstantiate(imports: ImportsObject): Required<ImportsObject> {
 		const memory = baseModule.memory || env.memory; // prefer exported, otherwise try imported
 		throw Error(`abort: ${getString(memory, msg)} at ${getString(memory, file)}:${line}:${column}`);
 	};
-	env.trace = env.trace || function trace(msg: number, n: string, ...rest: any[]) {
+	env.trace = env.trace || function trace(msg: number, numArgs?: number, ...rest: any[]) {
 		const memory = baseModule.memory || env.memory;
-		console.log(`trace: ${getString(memory, msg)}${n ? ' ' : ''}${rest.join(', ')}`);
+		console.log(`trace: ${getString(memory, msg)}${numArgs ? ' ' : ''}${rest.join(', ')}`);
 	};
 	imports.Math = imports.Math || Math;
 	imports.Date = imports.Date || Date;
@@ -288,7 +288,7 @@ interface ImportsObject extends Record<string, any> {
 		memory?: WebAssembly.Memory;
 		table?: WebAssembly.Table;
 		abort?: (msg: number, file: number, line: number, column: number) => void;
-		trace?: (msg: number, n: string, ...rest: any[]) => void;
+		trace?: (msg: number, numArgs?: number, ...rest: any[]) => void;
 	};
 }
 
