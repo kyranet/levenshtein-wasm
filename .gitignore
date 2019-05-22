@@ -9,6 +9,5 @@ test/*.js.map
 test/*.tsbuildinfo
 *.log
 
-build/*.wasm
-build/*.wasm.map
-build/*.asm.js
+# Don't upload builds to the repository
+# build/
