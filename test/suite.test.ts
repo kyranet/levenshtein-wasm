@@ -2,20 +2,37 @@ import * as test from 'tape';
 import { levenshtein } from '../dist/index';
 
 test('Basic Test', t => {
-	t.plan(14);
+	t.plan(16);
 
-	t.equal(levenshtein('a', 'b'), 1, 'a -> b');
-	t.equal(levenshtein('ab', 'ac'), 1, 'ab -> ac');
-	t.equal(levenshtein('ac', 'bc'), 1, 'ac -> bc');
-	t.equal(levenshtein('abc', 'axc'), 1, 'abc -> axc');
-	t.equal(levenshtein('kitten', 'sitting'), 3, 'kitten -> sitting');
-	t.equal(levenshtein('xabxcdxxefxgx', '1ab2cd34ef5g6'), 6, 'xabxcdxxefxgx -> 1ab2cd34ef5g6');
-	t.equal(levenshtein('cat', 'cow'), 2, 'cat -> cow');
-	t.equal(levenshtein('xabxcdxxefxgx', 'abcdefg'), 6, 'xabxcdxxefxgx -> abcdefg');
-	t.equal(levenshtein('javawasneat', 'scalaisgreat'), 7, 'javawasneat -> scalaisgreat');
-	t.equal(levenshtein('example', 'samples'), 3, 'example -> samples');
-	t.equal(levenshtein('sturgeon', 'urgently'), 6, 'sturgeon -> urgently');
-	t.equal(levenshtein('levenshtein', 'frankenstein'), 6, 'levenshtein -> frankenstein');
-	t.equal(levenshtein('distance', 'difference'), 5, 'distance -> difference');
-	t.equal(levenshtein('因為我是中國人所以我會說中文', '因為我是英國人所以我會說英文'), 2, '因為我是中國人所以我會說中文 -> 因為我是英國人所以我會說英文');
+	t.comment('Equal Strings');
+	t.equal(levenshtein('hello', 'hello'), 0);
+
+	t.comment('Substitutions');
+	t.equal(levenshtein('a', 'b'), 1);
+	t.equal(levenshtein('ab', 'ac'), 1);
+	t.equal(levenshtein('ac', 'bc'), 1);
+	t.equal(levenshtein('abc', 'axc'), 1);
+	t.equal(levenshtein('xabxcdxxefxgx', '1ab2cd34ef5g6'), 6);
+
+	t.comment('Many ops');
+	t.equal(levenshtein('xabxcdxxefxgx', 'abcdefg'), 6);
+	t.equal(levenshtein('javawasneat', 'scalaisgreat'), 7);
+	t.equal(levenshtein('example', 'samples'), 3);
+	t.equal(levenshtein('forward', 'drawrof'), 6);
+	t.equal(levenshtein('sturgeon', 'urgently'), 6);
+	t.equal(levenshtein('levenshtein', 'frankenstein'), 6);
+	t.equal(levenshtein('distance', 'difference'), 5);
+	t.equal(levenshtein('distance', 'eistancd'), 2);
+
+	t.comment('Non-latin');
+	t.equal(levenshtein('因為我是中國人所以我會說中文', '因為我是英國人所以我會說英文'), 2);
+
+	t.comment('Long text');
+	t.equal(levenshtein([
+		'Morbi interdum ultricies neque varius condimentum. Donec volutpat turpis interdum metus ultricies vulputate.',
+		'Duis ultricies rhoncus sapien, sit amet fermentum risus imperdiet vitae. Ut et lectus'
+	].join(' '), [
+		'Duis erat dolor, cursus in tincidunt a, lobortis in odio. Cras magna sem, pharetra et iaculis quis, faucibus quis tellus.',
+		'Suspendisse dapibus sapien in justo cursus'
+	].join(' ')), 143);
 });
