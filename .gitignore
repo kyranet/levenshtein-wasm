@@ -10,4 +10,4 @@ test/*.tsbuildinfo
 *.log
 
 # Don't upload builds to the repository
-# build/
+build/
