@@ -6,11 +6,13 @@
   "author": "kyranet <kyradiscord@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "assemblyscript": "AssemblyScript/assemblyscript"
+    "assemblyscript": "AssemblyScript/assemblyscript",
+    "tape": "^4.10.1"
   },
   "scripts": {
     "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
     "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate -O3",
-    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "test": "node test/suite"
   }
 }
