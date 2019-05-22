@@ -1,4 +1,5 @@
 const { readFileSync } = require('fs');
+const { instantiateBuffer } = require('assemblyscript/lib/loader');
 
 const imports = {
   env: {
@@ -7,6 +8,10 @@ const imports = {
     }
   }
 };
-const bytes = readFileSync(__dirname + "/build/untouched.wasm");
-const mod = new WebAssembly.Module(bytes);
-module.exports = new WebAssembly.Instance(mod, imports).exports;
+
+const wasmModule = instantiateBuffer(readFileSync(`${__dirname}/build/optimized.wasm`), imports);
+
+module.exports = function levenshtein(a, b) {
+  if (a.length > b.length) [a, b] = [b, a];
+  return wasmModule.levenshtein(wasmModule.newString(a), wasmModule.newString(b));
+};

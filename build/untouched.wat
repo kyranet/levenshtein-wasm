@@ -5,6 +5,7 @@
  (type $FUNCSIG$ii (func (param i32) (result i32)))
  (type $FUNCSIG$iiiiii (func (param i32 i32 i32 i32 i32) (result i32)))
  (type $FUNCSIG$vi (func (param i32)))
+ (type $FUNCSIG$iiii (func (param i32 i32 i32) (result i32)))
  (import "env" "abort" (func $~lib/env/abort (param i32 i32 i32 i32)))
  (memory $0 1)
  (data (i32.const 8) "\0e\00\00\00~\00l\00i\00b\00/\00s\00t\00r\00i\00n\00g\00.\00t\00s\00")
@@ -16,6 +17,10 @@
  (export "memory" (memory $0))
  (export "table" (table $0))
  (export "levenshtein" (func $assembly/index/levenshtein))
+ (export "memory.compare" (func $~lib/memory/memory.compare))
+ (export "memory.allocate" (func $~lib/memory/memory.allocate))
+ (export "memory.free" (func $~lib/memory/memory.free))
+ (export "memory.reset" (func $~lib/memory/memory.reset))
  (start $start)
  (func $start:~lib/allocator/arena (; 1 ;) (type $FUNCSIG$v)
   global.get $~lib/memory/HEAP_BASE
@@ -202,6 +207,13 @@
   (local $19 i32)
   (local $20 i32)
   (local $21 i32)
+  local.get $0
+  local.get $1
+  i32.eq
+  if
+   i32.const 0
+   return
+  end
   local.get $0
   i32.load
   local.set $2
@@ -616,9 +628,87 @@
   end
   local.get $11
  )
- (func $start (; 8 ;) (type $FUNCSIG$v)
+ (func $~lib/internal/memory/memcmp (; 8 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  local.get $0
+  local.get $1
+  i32.eq
+  if
+   i32.const 0
+   return
+  end
+  block $break|0
+   loop $continue|0
+    local.get $2
+    i32.const 0
+    i32.ne
+    local.tee $3
+    if (result i32)
+     local.get $0
+     i32.load8_u
+     local.get $1
+     i32.load8_u
+     i32.eq
+    else     
+     local.get $3
+    end
+    if
+     block
+      local.get $2
+      i32.const 1
+      i32.sub
+      local.set $2
+      local.get $0
+      i32.const 1
+      i32.add
+      local.set $0
+      local.get $1
+      i32.const 1
+      i32.add
+      local.set $1
+     end
+     br $continue|0
+    end
+   end
+  end
+  local.get $2
+  if (result i32)
+   local.get $0
+   i32.load8_u
+   local.get $1
+   i32.load8_u
+   i32.sub
+  else   
+   i32.const 0
+  end
+ )
+ (func $~lib/memory/memory.compare (; 9 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  local.get $0
+  local.get $1
+  local.get $2
+  call $~lib/internal/memory/memcmp
+ )
+ (func $~lib/memory/memory.allocate (; 10 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  local.get $0
+  call $~lib/allocator/arena/__memory_allocate
+  return
+ )
+ (func $~lib/memory/memory.free (; 11 ;) (type $FUNCSIG$vi) (param $0 i32)
+  local.get $0
+  call $~lib/allocator/arena/__memory_free
+  return
+ )
+ (func $~lib/allocator/arena/__memory_reset (; 12 ;) (type $FUNCSIG$v)
+  global.get $~lib/allocator/arena/startOffset
+  global.set $~lib/allocator/arena/offset
+ )
+ (func $~lib/memory/memory.reset (; 13 ;) (type $FUNCSIG$v)
+  call $~lib/allocator/arena/__memory_reset
+  return
+ )
+ (func $start (; 14 ;) (type $FUNCSIG$v)
   call $start:assembly/index
  )
- (func $null (; 9 ;) (type $FUNCSIG$v)
+ (func $null (; 15 ;) (type $FUNCSIG$v)
  )
 )

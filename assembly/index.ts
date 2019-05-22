@@ -1,4 +1,6 @@
-import "allocator/arena";
+import 'allocator/arena';
+// @ts-ignore
+export { memory };
 
 export function levenshtein(a: string, b: string): u32 {
   if (a === b) return <u32>0;
