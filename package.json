@@ -1,6 +1,6 @@
 {
   "name": "levenshtein-wasm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightning-fast Wasm-compiled levenshtein library.",
   "main": "dist/index.js",
   "author": "kyranet <kyradiscord@gmail.com>",
