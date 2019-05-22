@@ -1,4 +1,4 @@
-# Levenshtein Wasm
+# Levenshtein Wasm <img src="https://github.com/kyranet/levenshtein-wasm/blob/master/static/logo.png?raw=true" align="right" width="30%">
 
 <div align="center">
 	<p>
