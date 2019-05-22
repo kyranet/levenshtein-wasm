@@ -17,6 +17,7 @@ docs/
 .vscode/
 .idea/
 examples/
+assembly/
 test/
 static/
 .eslintrc.json

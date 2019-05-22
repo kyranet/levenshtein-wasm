@@ -8,3 +8,7 @@ test/*.js
 test/*.js.map
 test/*.tsbuildinfo
 *.log
+
+build/*.wasm
+build/*.wasm.map
+build/*.asm.js
