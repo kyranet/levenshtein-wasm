@@ -1,20 +1,9 @@
 {
   "name": "levenshtein-wasm",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Lightning-fast Wasm-compiled levenshtein library.",
   "main": "dist/index.js",
-  "author": "kyranet <kyradiscord@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^12.0.2",
-    "@types/tape": "^4.2.33",
-    "@typescript-eslint/eslint-plugin": "^1.9.0",
-    "assemblyscript": "AssemblyScript/assemblyscript",
-    "eslint": "^5.16.0",
-    "eslint-config-marine": "^3.0.2",
-    "tape": "^4.10.1",
-    "typescript": "^3.4.5"
-  },
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build:production",
     "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
@@ -27,5 +16,35 @@
     "test:run": "node test/suite.test",
     "test:lint": "eslint --ext ts src test assembly",
     "lint": "eslint --ext ts src test assembly --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kyranet/levenshtein-wasm.git"
+  },
+  "keywords": [
+    "levenshtein",
+    "levenshtein-distance",
+    "webassembly",
+    "wasm",
+    "assemblyscript"
+  ],
+  "contributors": [
+    "kyranet <kyradiscord@gmail.com>"
+  ],
+  "author": "kyranet <kyradiscord@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyranet/levenshtein-wasm/issues"
+  },
+  "homepage": "https://github.com/kyranet/levenshtein-wasm#readme",
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "@types/tape": "^4.2.33",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "assemblyscript": "AssemblyScript/assemblyscript",
+    "eslint": "^5.16.0",
+    "eslint-config-marine": "^3.0.2",
+    "tape": "^4.10.1",
+    "typescript": "^3.4.5"
   }
 }
