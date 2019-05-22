@@ -7,3 +7,4 @@ dist/
 test/*.js
 test/*.js.map
 test/*.tsbuildinfo
+*.log

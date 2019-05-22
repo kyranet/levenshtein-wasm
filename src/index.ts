@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { instantiateBuffer } from 'assemblyscript/lib/loader';
+import { instantiateBuffer } from './loader';
+
 
 const wasmModule = instantiateBuffer<{
 	levenshtein(left: number, right: number): number;

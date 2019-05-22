@@ -26,7 +26,7 @@
 		"strictBindCallApply": true,
     "target": "esnext",
     "newLine": "LF",
-		"types": ["node", "./types/webassembly", "./types/response"]
+		"types": ["node", "./types/webassembly"]
 	},
 	"include": [
     "./src/**/*"

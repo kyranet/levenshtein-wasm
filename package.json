@@ -24,6 +24,7 @@
     "build:test": "tsc -p test",
     "test": "yarn build && yarn build:test && yarn test:run",
     "test:run": "node test/suite.test",
-    "test:lint": "eslint --ext ts src test assembly"
+    "test:lint": "eslint --ext ts src test assembly",
+    "lint": "eslint --ext ts src test assembly --fix"
   }
 }
