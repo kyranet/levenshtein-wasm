@@ -4,7 +4,7 @@ import { get as fastLevenshtein } from 'fast-levenshtein';
 import talisman from 'talisman/metrics/distance/levenshtein';
 import leven from 'leven';
 import levenshtein from 'js-levenshtein';
-import { levenshtein as kyrashtein } from 'levenshtein-wasm';
+import { levenshtein as kyrashtein } from '../dist/index';
 
 interface BenchFunction {
 	(word1: string, word2: string): boolean;
