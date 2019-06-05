@@ -2,7 +2,7 @@
   "name": "bench",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "benchmark.js",
   "dependencies": {
     "benchmark": "^2.1.4",
     "fast-levenshtein": "^2.0.6",
