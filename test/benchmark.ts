@@ -7,7 +7,7 @@ import levenshtein from 'js-levenshtein';
 import { levenshtein as kyrashtein } from '../dist/index';
 
 interface BenchFunction {
-	(word1: string, word2: string): boolean;
+	(word1: string, word2: string): number;
 }
 
 const paragraphs = [
