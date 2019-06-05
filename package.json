@@ -11,11 +11,14 @@
     "asbuild": "yarn asbuild:untouched && yarn asbuild:optimized",
     "build": "yarn asbuild && tsc -p .",
     "build:test": "tsc -p test",
+    "build:benchmark": "tsc -p benchmark",
     "build:production": "yarn asbuild:optimized && tsc -p .",
     "test": "yarn build && yarn build:test && yarn test:run",
     "test:run": "node test/suite.test",
     "test:lint": "eslint --ext ts src test assembly",
-    "lint": "eslint --ext ts src test assembly --fix"
+    "lint": "eslint --ext ts src test assembly --fix",
+    "benchmark": "yarn build && yarn build:benchmark && yarn benchmark:run",
+    "benchmark:run": "node benchmark/benchmark"
   },
   "repository": {
     "type": "git",
