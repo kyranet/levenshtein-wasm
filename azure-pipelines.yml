@@ -45,6 +45,8 @@ jobs:
         inputs:
           versionSpec: '10.x'
         displayName: 'Install Node.js'
+      - script: yarn
+        displayName: 'Install levenshtein-wasm Dependencies'
       - script: cd benchmark && yarn
         displayName: 'Install Benchmark Suite Dependencies'
       - script: 'yarn benchmark'
