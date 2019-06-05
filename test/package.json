@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "benchmark": "^2.1.4",
     "fast-levenshtein": "^2.0.6",
     "js-levenshtein": "^1.1.6",
     "leven": "^3.1.0",
     "levenshtein-edit-distance": "^2.0.4",
-    "levenshtein-wasm": "^1.1.0",
     "talisman": "^0.21.0"
   },
   "devDependencies": {
