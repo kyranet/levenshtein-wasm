@@ -1,9 +1,9 @@
 import { Suite } from 'benchmark';
-import levenshteinEditDistance from 'levenshtein-edit-distance';
+import levenshteinEditDistance = require('levenshtein-edit-distance');
 import { get as fastLevenshtein } from 'fast-levenshtein';
-import talisman from 'talisman/metrics/distance/levenshtein';
+import talisman = require('talisman/metrics/distance/levenshtein');
 import leven from 'leven';
-import levenshtein from 'js-levenshtein';
+import levenshtein = require('js-levenshtein');
 import { levenshtein as kyrashtein } from '../dist/index';
 
 import { paragraphs } from './paragraphs';

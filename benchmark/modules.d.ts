@@ -1,7 +1,9 @@
 declare module 'talisman/metrics/distance/levenshtein' {
-	export default function(left: string, right: string): number;
+	function leven(left: string, right: string): number;
+	export = leven;
 }
 
 declare module 'levenshtein-edit-distance' {
-	export default function(left: string, right: string): number;
+	function leven(left: string, right: string): number;
+	export = leven;
 }
