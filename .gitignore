@@ -11,3 +11,6 @@ test/*.tsbuildinfo
 
 # Don't upload builds to the repository
 build/
+benchmark/*.js
+benchmark/*.js.map
+benchmark/*.tsbuildinfo
