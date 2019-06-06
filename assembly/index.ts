@@ -1,10 +1,9 @@
 // Copyright (c) Sindre Sorhus <sindresorhus@gmail.com>. All rights reserved. MIT license.
 // This is a derivative work of https://github.com/sindresorhus/leven in AssemblyScript.
 
-/* global memory, load, store, sizeof */
+/* global memory, usize */
 /* eslint-disable prefer-const, @typescript-eslint/restrict-plus-operands */
 
-import 'allocator/arena';
 // @ts-ignore
 export { memory };
 
@@ -31,16 +30,14 @@ export function levenshtein(left: string, right: string): usize {
 	rightLength -= start;
 
 	let bCharCode: u16;
-	let result: usize;
+	let result: usize = usize.MAX_VALUE;
 	let temp: u16;
 	let temp2: u16;
 	let i: u16 = 0;
 	let j: u16 = 0;
 
-	let ptr: usize = memory.allocate(leftLength);
-	while (i < leftLength) {
-		store<u16>(ptr + (i * sizeof<u16>()), ++i as u16);
-	}
+	let view: Uint16Array = new Uint16Array(leftLength);
+	while (i < leftLength) view[i] = ++i;
 
 	while (j < rightLength) {
 		bCharCode = right.charCodeAt(start + j) as u16;
@@ -50,7 +47,7 @@ export function levenshtein(left: string, right: string): usize {
 
 		for (i = 0; i < leftLength; ++i) {
 			temp2 = bCharCode === left.charCodeAt(start + i) ? temp : temp + 1;
-			temp = load<u16>(ptr + (i * sizeof<u16>()));
+			temp = view[i];
 			result = temp > result
 				? temp2 > result
 					? result + 1
@@ -58,10 +55,9 @@ export function levenshtein(left: string, right: string): usize {
 				: temp2 > temp
 					? temp + 1
 					: temp2;
-			store<u16>(ptr + (i * sizeof<u16>()), result as u16);
+			view[i] = result;
 		}
 	}
 
-	memory.free(ptr);
-	return result!;
+	return result;
 }
