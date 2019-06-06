@@ -32,6 +32,22 @@ jobs:
           versionSpec: '10.x'
         displayName: 'Install Node.js'
       - script: yarn
-        displayName: 'Install Dependencies'
+        displayName: 'Install levenshtein-wasm Dependencies'
       - script: 'yarn test'
         displayName: 'Test Suite'
+  - job: Benchmark
+    pool:
+      vmImage: 'ubuntu-16.04'
+    dependsOn: Build
+    condition: succeeded()
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '10.x'
+        displayName: 'Install Node.js'
+      - script: yarn
+        displayName: 'Install levenshtein-wasm Dependencies'
+      - script: cd benchmark && yarn
+        displayName: 'Install Benchmark Suite Dependencies'
+      - script: 'yarn benchmark'
+        displayName: 'Benchmark Suite'
