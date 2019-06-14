@@ -48,6 +48,6 @@
     "eslint": "^5.16.0",
     "eslint-config-marine": "^3.0.2",
     "tape": "^4.10.1",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.2"
   }
 }
