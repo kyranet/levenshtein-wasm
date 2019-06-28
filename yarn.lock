@@ -124,8 +124,8 @@ argparse@^1.0.7:
 
 assemblyscript@AssemblyScript/assemblyscript:
   version "0.7.0"
-  uid cf0f4f5d7b4b994593d0981099cadbde91f2fba4
-  resolved "https://codeload.github.com/AssemblyScript/assemblyscript/tar.gz/cf0f4f5d7b4b994593d0981099cadbde91f2fba4"
+  uid "316b2d460f7cc4d3e102cb8b54f6e1cd0451f112"
+  resolved "https://codeload.github.com/AssemblyScript/assemblyscript/tar.gz/316b2d460f7cc4d3e102cb8b54f6e1cd0451f112"
   dependencies:
     "@protobufjs/utf8" "^1.1.0"
     binaryen "84.0.0-nightly.20190522"
