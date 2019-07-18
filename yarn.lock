@@ -124,11 +124,11 @@ argparse@^1.0.7:
 
 assemblyscript@AssemblyScript/assemblyscript:
   version "0.7.0"
-  uid "678593d7bd8ee9573eadbd43e3635e0bc0b8e15e"
-  resolved "https://codeload.github.com/AssemblyScript/assemblyscript/tar.gz/678593d7bd8ee9573eadbd43e3635e0bc0b8e15e"
+  uid ed52a6ffcca78dd61c2cc7e4c2601f3a5f118cfa
+  resolved "https://codeload.github.com/AssemblyScript/assemblyscript/tar.gz/ed52a6ffcca78dd61c2cc7e4c2601f3a5f118cfa"
   dependencies:
     "@protobufjs/utf8" "^1.1.0"
-    binaryen "84.0.0-nightly.20190522"
+    binaryen "87.0.0-nightly.20190716"
     glob "^7.1.4"
     long "^4.0.0"
     opencollective-postinstall "^2.0.0"
@@ -144,10 +144,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-binaryen@84.0.0-nightly.20190522:
-  version "84.0.0-nightly.20190522"
-  resolved "https://registry.yarnpkg.com/binaryen/-/binaryen-84.0.0-nightly.20190522.tgz#31d3e8df90ec01509183d23d15b1ce16b53e87af"
-  integrity sha512-bxSPi3MOkFmK5W6VIlqxnOc1nYzpUCzT/tHz3C7sgbz7jTR2lOBlZnKStTJlBt018xeZK9/JpK/jXdduH7eQFg==
+binaryen@87.0.0-nightly.20190716:
+  version "87.0.0-nightly.20190716"
+  resolved "https://registry.yarnpkg.com/binaryen/-/binaryen-87.0.0-nightly.20190716.tgz#5aaad26885c53cfac3163d21592cea46e3ed5c64"
+  integrity sha512-qRGfV8cLV4HVVo1oUCtTaDmOhbwctaW7vyW0G6HKftywWOJI9t9IsCrUEFKya50RqyEnanuS2w3nfOg4bxTGqg==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
