@@ -288,23 +288,23 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-aqua@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-aqua/-/eslint-config-aqua-6.0.0.tgz#bfc49aaa757864e47c2584f3afcc6253a1c020d4"
-  integrity sha512-zH8/LTjA11ghrelRw5bGSReoz6gDAsSDGUNyy7EP7APkFvzEA0Xvnq+w2mu5R4i8z1g+GILReU0bI2uuDK7jAA==
+eslint-config-aqua@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-aqua/-/eslint-config-aqua-7.0.1.tgz#67f70d39f3d14b53b423dba50fd2b9f9a0dbec45"
+  integrity sha512-+wZY14nAsgcO+FDyHREWBHW4W13+E8X1jDvwFaLmDtjkrPqX7VneZMQC4QTP97WJQ0uYBqAImlZG+BNi4EHPDA==
 
-eslint-config-marine@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-marine/-/eslint-config-marine-3.0.2.tgz#df9c09a5c15f618d5795f640e951a1fe82f0b3a2"
-  integrity sha512-jeI3ZHvnlGhrJoBs9BbSxilp3hxJQC0rzL3G9TFMElCoNeK9LeY3GxfBLL5j8JIjbC4EKQJX8DtbRI1goffelA==
+eslint-config-marine@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-marine/-/eslint-config-marine-5.1.0.tgz#274bc8762fe62697d499c8b3044d6a9307d43918"
+  integrity sha512-0kXF6/de9EIghm0gODZpk6rfH4ySevJGYsqxkMBQtK5a0Q1LuQfxb3muWFD6gf706V0h2DWlKq5JGX/8pWvAyQ==
   dependencies:
-    eslint-config-aqua "^6.0.0"
-    eslint-plugin-promise "^4.1.1"
+    eslint-config-aqua "^7.0.1"
+    eslint-plugin-promise "^4.2.1"
 
-eslint-plugin-promise@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.1.1.tgz#1e08cb68b5b2cd8839f8d5864c796f56d82746db"
-  integrity sha512-faAHw7uzlNPy7b45J1guyjazw28M+7gJokKUjC5JSFoYfUEyy6Gw/i7YQvmv2Yk00sUjWcmzXQLpU1Ki/C2IZQ==
+eslint-plugin-promise@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
+  integrity sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
 
 eslint-scope@^4.0.0, eslint-scope@^4.0.3:
   version "4.0.3"
