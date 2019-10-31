@@ -46,7 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "assemblyscript": "AssemblyScript/assemblyscript",
     "eslint": "^5.16.0",
-    "eslint-config-marine": "^3.0.2",
+    "eslint-config-marine": "^5.3.1",
     "tape": "^4.11.0",
     "typescript": "^3.6.4"
   }
