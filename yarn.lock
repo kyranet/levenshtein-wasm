@@ -122,10 +122,10 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-assemblyscript@AssemblyScript/assemblyscript:
-  version "0.7.0"
-  uid ce0457e9edd87c04179ce16ee99753205521aa21
-  resolved "https://codeload.github.com/AssemblyScript/assemblyscript/tar.gz/ce0457e9edd87c04179ce16ee99753205521aa21"
+assemblyscript@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/assemblyscript/-/assemblyscript-0.8.0.tgz#ec0c28bddcf43be1d231a106ae1b3ebee99b6311"
+  integrity sha512-kggdeiWevgPnVgEOl0fgE3GHe78aNVn93QmzazkmEl5DZGUGhL5pYnJZ/B0lcni1sd7lYkGVZf/d+8myVx4hNw==
   dependencies:
     "@protobufjs/utf8" "^1.1.0"
     binaryen "89.0.0-nightly.20191012"
