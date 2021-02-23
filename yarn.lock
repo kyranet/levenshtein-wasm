@@ -117,12 +117,12 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-assemblyscript@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/assemblyscript/-/assemblyscript-0.8.1.tgz#c5c627492406e6d87f426897b3d92bd2a533f7fe"
-  integrity sha512-AEpb4Aq5g77XOxSvWn9ZFjIdfyypGavO5oKOAXUo22tnSpebGHdrx0iyVindGKkDlxWhHUc87B0fvM/w1fnpDg==
+assemblyscript@^0.18.11:
+  version "0.18.11"
+  resolved "https://registry.yarnpkg.com/assemblyscript/-/assemblyscript-0.18.11.tgz#14c10bbca46f754b2f60167f139623973e150f34"
+  integrity sha512-QIIPeHRq+0uw7A2xWzmJM1I8Ca7AGuNpp2JFFkdTBMfVrQULtWieqOBIZG+VDRbYEbjbCdonEWcnGCi2ujzz6Q==
   dependencies:
-    binaryen "89.0.0-nightly.20191113"
+    binaryen "98.0.0-nightly.20210106"
     long "^4.0.0"
 
 astral-regex@^1.0.0:
@@ -135,10 +135,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-binaryen@89.0.0-nightly.20191113:
-  version "89.0.0-nightly.20191113"
-  resolved "https://registry.yarnpkg.com/binaryen/-/binaryen-89.0.0-nightly.20191113.tgz#a0d3914f35c929787341e02910b7ffaeb7d897a9"
-  integrity sha512-scODswmj6Xf/Adjy1PRsjf8fHxpIIUYpH7HjKUaZ/RdZYjqB1Zq3X4izpLfcK+hKGNah92DpAJ3i/adEayMe9g==
+binaryen@98.0.0-nightly.20210106:
+  version "98.0.0-nightly.20210106"
+  resolved "https://registry.yarnpkg.com/binaryen/-/binaryen-98.0.0-nightly.20210106.tgz#c7bc637e2223a83bf3cae9d98969f569efab4062"
+  integrity sha512-iunAgesqT9PXVYCc72FA4h0sCCKLifruT6NuUH63xqlFJGpChhZLgOtyIb/fIgTibN5Pd692cxfBViyCWFsJ9Q==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
