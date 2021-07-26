@@ -42,7 +42,7 @@
   "homepage": "https://github.com/kyranet/levenshtein-wasm#readme",
   "devDependencies": {
     "@types/node": "^13.1.6",
-    "@types/tape": "^4.2.33",
+    "@types/tape": "^4.13.2",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "assemblyscript": "^0.8.1",
     "eslint": "^5.16.0",
